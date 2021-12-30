@@ -5,12 +5,13 @@ GEM
       descendants_tracker (~> 0.0.4)
       ice_nine (~> 0.11.0)
       thread_safe (~> 0.3, >= 0.3.1)
+    chronic (0.10.2)
     coercible (1.0.0)
       descendants_tracker (~> 0.0.1)
     descendants_tracker (0.0.4)
       thread_safe (~> 0.3, >= 0.3.1)
     dotenv (2.7.6)
-    dry-inflector (0.2.0)
+    dry-inflector (0.2.1)
     faraday (1.8.0)
       faraday-em_http (~> 1.0)
       faraday-em_synchrony (~> 1.0)
@@ -31,12 +32,11 @@ GEM
     faraday-patron (1.0.0)
     faraday-rack (1.0.0)
     ice_nine (0.11.2)
-    mini_portile2 (2.6.1)
     multipart-post (2.1.1)
-    nokogiri (1.12.5)
-      mini_portile2 (~> 2.6.1)
+    nokogiri (1.12.5-x86_64-linux)
       racc (~> 1.4)
     racc (1.6.0)
+    rake (13.0.6)
     ruby2_keywords (0.0.5)
     telegram-bot-ruby (0.16.0)
       dry-inflector
@@ -47,14 +47,18 @@ GEM
       axiom-types (~> 0.1)
       coercible (~> 1.0)
       descendants_tracker (~> 0.0, >= 0.0.3)
+    whenever (1.0.0)
+      chronic (>= 0.6.3)
 
 PLATFORMS
-  ruby
+  x86_64-linux
 
 DEPENDENCIES
   dotenv
   nokogiri
+  rake
   telegram-bot-ruby
+  whenever
 
 BUNDLED WITH
-   1.16.1
+   2.3.4

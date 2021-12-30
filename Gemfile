@@ -11,3 +11,7 @@ gem 'telegram-bot-ruby'
 gem 'dotenv'
 
 gem 'nokogiri'
+
+gem 'whenever'
+
+gem 'rake'

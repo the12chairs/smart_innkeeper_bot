@@ -1,7 +1,7 @@
 require 'nokogiri'
 require 'open-uri'
 
-class Joke
+class Joker
     def initialize
         @url = ENV['JOKE_SOURCE']
     end
@@ -9,7 +9,7 @@ class Joke
     def random()
         html = Nokogiri::HTML.parse(URI.open(@url))
         
-        return remove_html_tags(html.at('.text.desktop').inner_html)
+        return remove_html_tags(html.at('.anekdot').inner_html)
     end
 
     def remove_html_tags(joke)

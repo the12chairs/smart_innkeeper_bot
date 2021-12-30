@@ -1,0 +1,4 @@
+desc "Taunt all"
+task :taunt do
+    require './commands/taunt'
+end
