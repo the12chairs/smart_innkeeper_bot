@@ -1,14 +1,14 @@
 #!/usr/bin/ruby
 
+require './src/env_loader.rb'
+require './src/joke_engine'
+require './src/postcard_engine.rb'
+
 require 'telegram/bot'
-require 'dotenv/load'
-require './joke_engine'
-
-Dotenv.load('.env')
-
 token = ENV['TELEGRAM_APITOKEN']
 
 joke = Joke.new
+postcarder = Postcarder.new
 
 loop do
     Telegram::Bot::Client.run(token) do |bot|
@@ -22,7 +22,9 @@ loop do
                         end
                         bot.api.send_message(chat_id: rqst.chat.id, text: anek)
                     when '/наливай'
-                        bot.api.sendPhoto(chat_id: rqst.chat.id, caption: "Держи кружечку", photo: "http://c.files.bbci.co.uk/6932/production/_92803962_thinkstockphotos-92218902.jpg")
+                        bot.api.send_photo(chat_id: rqst.chat.id, caption: "Держи кружечку", photo: "http://c.files.bbci.co.uk/6932/production/_92803962_thinkstockphotos-92218902.jpg")
+                    when '/гифка'
+                        bot.api.send_video(chat_id: rqst.chat.id, video: postcarder.get_one)
                 end
             end
         end

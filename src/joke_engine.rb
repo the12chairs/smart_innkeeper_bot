@@ -3,7 +3,7 @@ require 'open-uri'
 
 class Joke
     def initialize
-        @url = 'https://www.anekdot.ru/random/anekdot/'
+        @url = ENV['JOKE_SOURCE']
     end
 
     def random()
